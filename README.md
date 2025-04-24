@@ -1,6 +1,10 @@
 # kosprin
 
-Kotlin spring boot and microservices template
+Kotlin spring boot and microservices template.
+
+It emulates a distributed system think like a mini YouTube/Instagram backend.
+
+Full details of each components can be found in the docs folder.
 
 
 

@@ -1,0 +1,18 @@
+[versions]
+spring-boot = "3.4.4"
+kotlin      = "2.1.20"
+kafka       = "3.5.0"
+
+
+[libraries]
+boot-web      = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot" }
+boot-security = { module = "org.springframework.boot:spring-boot-starter-security", version.ref = "spring-boot" }
+boot-oauth2   = { module = "org.springframework.boot:spring-boot-starter-oauth2-resource-server", version.ref = "spring-boot" }
+boot-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "spring-boot" }
+boot-kafka    = { module = "org.springframework.kafka:spring-kafka", version = "3.2.3" }
+postgresql    = { module = "org.postgresql:postgresql", version = "42.7.3" }
+
+[plugins]
+
+
+
