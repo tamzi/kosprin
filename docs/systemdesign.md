@@ -18,7 +18,7 @@ This is a fictitious distributed system (like a mini YouTube/Instagram backend) 
 
 # Architecture design
 ## High-Level Architecture
-Use [mermaid chart](https://www.mermaidchart.com/) to draw the architecture diagram
+Use [mermaid chart](https://www.mermaidchart.com/) to draw / modify the architecture diagram
 
 ```mermaid
 flowchart TB
