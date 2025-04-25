@@ -18,3 +18,9 @@ Gradle commands:
 
 * Run `./gradlew :service1:bootRun` to run the inventory service
 
+
+
+actions:
+
+- [ ] implement a service based off this template.
+- [ ] Move the implementation service to a new repo.
