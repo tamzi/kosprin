@@ -9,6 +9,7 @@ Full details of each components can be found in the docs folder.
 
 
 ## Gradle commands:
+
  [] to fix the issue with gradle runs
 
 * Run `./gradlew bootRun` to run the application.
