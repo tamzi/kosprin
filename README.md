@@ -8,7 +8,8 @@ Full details of each components can be found in the docs folder.
 
 
 
-Gradle commands:
+## Gradle commands:
+
  [] to fix the issue with gradle runs
 
 * Run `./gradlew bootRun` to run the application.
@@ -20,7 +21,7 @@ Gradle commands:
 
 
 
-actions:
+## to do actions:
 
 - [ ] implement a service based off this template.
 - [ ] Move the implementation service to a new repo.
