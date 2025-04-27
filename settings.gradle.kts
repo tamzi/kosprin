@@ -4,7 +4,7 @@ listOf(
     "analytics-service",
     "common",
     "feed-service",
-    "frontend-dashboard",
+    "dashboard",
     "gateway",
     "metadata-service",
     "notification-service",
