@@ -1,18 +1,195 @@
 [versions]
+#Core Frameworks
 spring-boot = "3.4.4"
-kotlin      = "2.1.20"
-kafka       = "3.5.0"
+kotlin = "2.1.20"
+webflux = "3.4.4"
 
+#Spring Cloud
+spring-cloud = "2022.0.4"
+spring-cloud-gateway = "4.0.7"
+spring-cloud-config = "4.0.7"
+spring-cloud-contract = "4.1.2"
+
+#Messaging
+kafka = "3.5.1"
+
+#Database
+postgresql = "42.7.3"
+mysql = "8.3.0"
+mybatis-spring-boot = "3.0.3"
+mybatis-plus = "3.5.5"
+druid = "1.2.20"
+pagehelper = "1.4.7"
+
+#Caching
+redis = "3.4.4"
+redisson = "3.27.2"
+
+#Search
+elasticsearch = "8.12.2"
+
+#API Documentation
+springdoc = "2.0.0"
+swagger = "3.0.0"
+knife4j = "4.3.0"
+
+#Security
+jwt = "4.4.0"
+jjwt = "0.11.5"
+
+#Resilience
+resilience4j = "2.2.0"
+
+#Utilities
+lombok = "1.18.30"
+mapstruct = "1.5.5.Final"
+commons-lang3 = "3.14.0"
+commons-io = "2.15.1"
+commons-codec = "1.16.1"
+guava = "33.1.0-jre"
+hutool = "5.8.26"
+validation-api = "3.0.2"
+
+#Logging
+slf4j = "2.0.13"
+logback = "1.4.14"
+logstash-logback-encoder = "7.4"
+
+#JSON
+fastjson = "2.0.43"
+
+#HTTP Clients
+okhttp = "4.12.0"
+feign = "12.5"
+
+#Storage
+minio = "8.5.7"
+qiniu = "7.11.0"
+aliyun-oss = "3.17.2"
+aliyun-sdk-core = "4.7.1"
+aliyun-sdk-sts = "3.2.2"
+aliyun-sdk-dysmsapi = "2.2.0"
+
+#Excel
+easyexcel = "3.3.2"
+poi = "5.2.5"
+
+#QR Code
+zxing = "3.5.3"
+
+#Observability & Monitoring
+prometheus = "1.11.4"
+micrometer = "1.12.5"
+opentelemetry = "1.38.0"
+grafana = "10.4.2"
+
+#Observability & Monitoring
+prometheus = "1.11.4"
+micrometer = "1.12.5"
+opentelemetry = "1.38.0"
+grafana = "10.4.2"
 
 [libraries]
-boot-web      = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot" }
+#Spring Boot Starters
+boot-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot" }
 boot-security = { module = "org.springframework.boot:spring-boot-starter-security", version.ref = "spring-boot" }
-boot-oauth2   = { module = "org.springframework.boot:spring-boot-starter-oauth2-resource-server", version.ref = "spring-boot" }
+boot-oauth2 = { module = "org.springframework.boot:spring-boot-starter-oauth2-resource-server", version.ref = "spring-boot" }
 boot-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "spring-boot" }
-boot-kafka    = { module = "org.springframework.kafka:spring-kafka", version = "3.2.3" }
-postgresql    = { module = "org.postgresql:postgresql", version = "42.7.3" }
+boot-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux", version.ref = "webflux" }
+boot-redis = { module = "org.springframework.boot:spring-boot-starter-data-redis", version.ref = "spring-boot" }
+boot-mail = { module = "org.springframework.boot:spring-boot-starter-mail", version.ref = "spring-boot" }
+boot-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "spring-boot" }
+boot-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "spring-boot" }
+boot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot" }
+
+#Messaging
+boot-kafka = { module = "org.springframework.kafka:spring-kafka", version.ref = "kafka" }
+
+#Database
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+mysql = { module = "mysql:mysql-connector-java", version.ref = "mysql" }
+mybatis-spring-boot = { module = "org.mybatis.spring.boot:mybatis-spring-boot-starter", version.ref = "mybatis-spring-boot" }
+mybatis-plus-boot = { module = "com.baomidou:mybatis-plus-boot-starter", version.ref = "mybatis-plus" }
+druid = { module = "com.alibaba:druid-spring-boot-starter", version.ref = "druid" }
+pagehelper = { module = "com.github.pagehelper:pagehelper-spring-boot-starter", version.ref = "pagehelper" }
+
+#Caching
+redisson = { module = "org.redisson:redisson-spring-boot-starter", version.ref = "redisson" }
+
+#Search
+elasticsearch = { module = "org.elasticsearch.client:elasticsearch-rest-high-level-client", version.ref = "elasticsearch" }
+
+#API Documentation
+springdoc-openapi = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springdoc" }
+swagger = { module = "io.springfox:springfox-boot-starter", version.ref = "swagger" }
+knife4j = { module = "com.github.xiaoymin:knife4j-spring-boot-starter", version.ref = "knife4j" }
+
+#Spring Cloud
+spring-cloud-starter-gateway = { module = "org.springframework.cloud:spring-cloud-starter-gateway", version.ref = "spring-cloud-gateway" }
+spring-cloud-starter-config = { module = "org.springframework.cloud:spring-cloud-starter-config", version.ref = "spring-cloud-config" }
+spring-cloud-starter-contract-stub-runner = { module = "org.springframework.cloud:spring-cloud-starter-contract-stub-runner", version.ref = "spring-cloud-contract" }
+
+#Resilience4J
+resilience4j-spring-boot2 = { module = "io.github.resilience4j:resilience4j-spring-boot2", version.ref = "resilience4j" }
+resilience4j-reactor = { module = "io.github.resilience4j:resilience4j-reactor", version.ref = "resilience4j" }
+resilience4j-micrometer = { module = "io.github.resilience4j:resilience4j-micrometer", version.ref = "resilience4j" }
+
+#Security
+jwt = { module = "com.auth0:java-jwt", version.ref = "jwt" }
+jjwt = { module = "io.jsonwebtoken:jjwt", version.ref = "jjwt" }
+
+#Utilities
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+mapstruct = { module = "org.mapstruct:mapstruct", version.ref = "mapstruct" }
+commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3" }
+commons-io = { module = "commons-io:commons-io", version.ref = "commons-io" }
+commons-codec = { module = "commons-codec:commons-codec", version.ref = "commons-codec" }
+guava = { module = "com.google.guava:guava", version.ref = "guava" }
+hutool = { module = "cn.hutool:hutool-all", version.ref = "hutool" }
+validation-api = { module = "jakarta.validation:jakarta.validation-api", version.ref = "validation-api" }
+
+#Logging
+slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+logstash-logback-encoder = { module = "net.logstash.logback:logstash-logback-encoder", version.ref = "logstash-logback-encoder" }
+
+#JSON
+fastjson = { module = "com.alibaba.fastjson2:fastjson2", version.ref = "fastjson" }
+
+#HTTP Clients
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+feign = { module = "io.github.openfeign:feign-core", version.ref = "feign" }
+
+#Storage
+minio = { module = "io.minio:minio", version.ref = "minio" }
+qiniu = { module = "com.qiniu:qiniu-java-sdk", version.ref = "qiniu" }
+aliyun-oss = { module = "com.aliyun.oss:aliyun-sdk-oss", version.ref = "aliyun-oss" }
+aliyun-sdk-core = { module = "com.aliyun:aliyun-java-sdk-core", version.ref = "aliyun-sdk-core" }
+aliyun-sdk-sts = { module = "com.aliyun:aliyun-java-sdk-sts", version.ref = "aliyun-sdk-sts" }
+aliyun-sdk-dysmsapi = { module = "com.aliyun:dysmsapi20170525", version.ref = "aliyun-sdk-dysmsapi" }
+
+#Excel
+easyexcel = { module = "com.alibaba:easyexcel", version.ref = "easyexcel" }
+poi = { module = "org.apache.poi:poi-ooxml", version.ref = "poi" }
+
+#QR Code
+zxing = { module = "com.google.zxing:core", version.ref = "zxing" }
+
+#Observability & Monitoring
+micrometer-core = { module = "io.micrometer:micrometer-core", version.ref = "micrometer" }
+micrometer-registry-prometheus = { module = "io.micrometer:micrometer-registry-prometheus", version.ref = "micrometer" }
+spring-boot-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "spring-boot" }
+
+#Tracing
+opentelemetry-sdk = { module = "io.opentelemetry:opentelemetry-sdk", version.ref = "opentelemetry" }
+opentelemetry-exporter-otlp = { module = "io.opentelemetry:opentelemetry-exporter-otlp", version.ref = "opentelemetry" }
+opentelemetry-instrumentation-spring = { module = "io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter", version.ref = "opentelemetry" }
 
 [plugins]
-
-
-
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+spring-dependency-management = { id = "io.spring.dependency-management", version = "1.1.4" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
+lombok = { id = "io.freefair.lombok", version = "8.6" }
+mapstruct = { id = "org.mapstruct", version.ref = "mapstruct" }
