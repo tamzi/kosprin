@@ -4,9 +4,10 @@ Kotlin spring boot and microservices template.
 
 It emulates a distributed system think like a mini YouTube/Instagram backend.
 
-Full details of each components can be found in the docs folder.
+Full details of each component can be found in the docs folder.
 
-
+# RUnning project: 
+run npm install to install frontend dependencies
 
 ## Gradle commands:
 
