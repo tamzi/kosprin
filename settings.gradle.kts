@@ -1,10 +1,15 @@
 rootProject.name = "kosprin"
 
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
 listOf(
     "analytics-service",
     "common",
     "feed-service",
-    "dashboard",
     "gateway",
     "metadata-service",
     "notification-service",
