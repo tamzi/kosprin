@@ -1,0 +1,39 @@
+---
+description: Kosprin project rules — applies to every file in the repo.
+alwaysApply: true
+---
+
+The canonical project rules live in [AGENTS.md](mdc:AGENTS.md) and the [agents/](mdc:agents) directory. Read those before non-trivial changes.
+
+## Hard constraints
+- Never push without explicit user approval. Never use `--no-verify` or `--force`.
+- Atomic commits. Past-tense subject (e.g. `Added metadata DTO`). No body. No conventional-commits prefix.
+- One `.md` change per commit.
+- Module READMEs under 100 lines; detail goes in `docs/`.
+- No code snippets in `.md` files — link to source instead.
+- camelCase for `.md` filenames (exceptions: `README.md`, `AGENTS.md`, `CLAUDE.md`).
+- Secrets never in repo, even as examples — use placeholders.
+
+## Where to look
+- Architecture: [docs/tech/systemdesign.md](mdc:docs/tech/systemdesign.md)
+- Per-module summary: [docs/tech/services.md](mdc:docs/tech/services.md)
+- Build system: [docs/tech/buildSystem.md](mdc:docs/tech/buildSystem.md)
+- Messaging: [docs/tech/messaging.md](mdc:docs/tech/messaging.md)
+- Local dev: [docs/tech/localDevelopment.md](mdc:docs/tech/localDevelopment.md)
+- Active work: [jiraboard.md](mdc:jiraboard.md)
+- Improvement backlog: [docs/improvements.md](mdc:docs/improvements.md)
+
+## Rule modules
+- [agents/rules/architecture.md](mdc:agents/rules/architecture.md)
+- [agents/rules/codeStyle.md](mdc:agents/rules/codeStyle.md)
+- [agents/rules/commitConventions.md](mdc:agents/rules/commitConventions.md)
+- [agents/rules/documentationConventions.md](mdc:agents/rules/documentationConventions.md)
+- [agents/rules/agentBehaviour.md](mdc:agents/rules/agentBehaviour.md)
+
+## Skills (task playbooks)
+- [agents/skills/runLocalStack.md](mdc:agents/skills/runLocalStack.md)
+- [agents/skills/runTests.md](mdc:agents/skills/runTests.md)
+- [agents/skills/addNewService.md](mdc:agents/skills/addNewService.md)
+- [agents/skills/addKafkaTopic.md](mdc:agents/skills/addKafkaTopic.md)
+
+If a rule conflicts with what the task asks for, surface the conflict — don't silently work around it.
