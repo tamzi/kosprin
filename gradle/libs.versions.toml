@@ -1,0 +1,33 @@
+[versions]
+kotlin = "2.1.20"
+springBoot = "3.2.2"
+springDependencyManagement = "1.1.4"
+springCloud = "2022.0.4"
+springdoc = "2.3.0"
+kafka = "3.5.1"
+
+[libraries]
+springCloudDependencies = { group = "org.springframework.cloud", name = "spring-cloud-dependencies", version.ref = "springCloud" }
+jacksonModuleKotlin = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin" }
+kotlinReflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect" }
+springBootStarterWeb = { group = "org.springframework.boot", name = "spring-boot-starter-web" }
+springBootStarterWebflux = { group = "org.springframework.boot", name = "spring-boot-starter-webflux" }
+springBootStarterActuator = { group = "org.springframework.boot", name = "spring-boot-starter-actuator" }
+springBootStarterDataJpa = { group = "org.springframework.boot", name = "spring-boot-starter-data-jpa" }
+springBootStarterDataRedis = { group = "org.springframework.boot", name = "spring-boot-starter-data-redis" }
+springBootStarterDataElasticsearch = { group = "org.springframework.boot", name = "spring-boot-starter-data-elasticsearch" }
+springBootStarterOauth2ResourceServer = { group = "org.springframework.boot", name = "spring-boot-starter-oauth2-resource-server" }
+springBootStarterTest = { group = "org.springframework.boot", name = "spring-boot-starter-test" }
+springCloudStarterGateway = { group = "org.springframework.cloud", name = "spring-cloud-starter-gateway" }
+springKafka = { group = "org.springframework.kafka", name = "spring-kafka" }
+springKafkaTest = { group = "org.springframework.kafka", name = "spring-kafka-test" }
+postgresql = { group = "org.postgresql", name = "postgresql" }
+flyway = { group = "org.flywaydb", name = "flyway-core" }
+springdocOpenApi = { group = "org.springdoc", name = "springdoc-openapi-starter-webmvc-ui", version.ref = "springdoc" }
+
+[plugins]
+springBoot = { id = "org.springframework.boot", version.ref = "springBoot" }
+springDependencyManagement = { id = "io.spring.dependency-management", version.ref = "springDependencyManagement" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlinSpring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+kotlinJpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
