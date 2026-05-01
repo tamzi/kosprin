@@ -29,6 +29,7 @@ Step-by-step playbooks for routine tasks. Use them instead of re-deriving the st
 - [`agents/skills/runTests.md`](agents/skills/runTests.md) — run unit + integration tests for a single module or the whole tree.
 - [`agents/skills/addNewService.md`](agents/skills/addNewService.md) — cookie-cutter steps for a new service module.
 - [`agents/skills/addKafkaTopic.md`](agents/skills/addKafkaTopic.md) — register a topic and wire producer/consumer correctly.
+- [`agents/skills/checkDependencyUpdates.md`](agents/skills/checkDependencyUpdates.md) — run before every push to bump outdated deps.
 
 ## Hard constraints (TL;DR)
 - **Never push** without explicit user approval. **Never** use `--no-verify` or `--force`.
