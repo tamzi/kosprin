@@ -49,10 +49,11 @@ Tick a box (`[ ]` → `[x]`) the moment the work merges to `master`. Use `[~]` f
 - [ ] **Backup & restore drills** for Postgres and Elasticsearch on a schedule.
 
 ## Frontend architecture
-- [~] **Microfrontends with Module Federation** — React shell hosting React and Vue remotes, each independently deployable. *(KOS-19)*
+- [~] **Two independently-deployable frontends** — `dashboard-react` (end-user) and `dashboard-vue` (operator), separate apps with no runtime coupling. *(KOS-19)*
 - [ ] **Auto-generated TS API clients** from each service's OpenAPI spec.
 - [ ] **Storybook** for the design system.
 - [ ] **Visual regression tests** (Chromatic or Percy).
+- [ ] **Microfrontends with Module Federation** — only if multiple frontend teams need independent deployability into the same shell. Deferred; see [`tech/frontends.md`](tech/frontends.md#why-not-microfrontends).
 
 ## Documentation
 - [x] **Docs index** at `docs/README.md` covering tech, product, agents.
