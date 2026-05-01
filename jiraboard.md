@@ -6,6 +6,14 @@ This board is the **single source of truth** for project work. Every improvement
 
 The old `docs/improvements.md` backlog was consolidated into this file; the standalone improvements doc has been removed.
 
+## Working agreement
+- **Finish all stories in an epic before starting a different epic.** Don't cherry-pick.
+- **Within an epic, complete the current story end-to-end before opening another.**
+- If a story is genuinely **blocked** by a dependency, mark it `[~]` (in progress, parked) or `[!]` (blocked) with a one-line reason in the bullet, then continue with the rest of the same epic. Never silently skip a story to jump elsewhere.
+- **Stretch items in P9 do not start until** there is real bandwidth, or until one of them unlocks higher-priority work — at which point promote it into the band where it belongs.
+
+This rule is also captured in [`agents/rules/agentBehaviour.md`](agents/rules/agentBehaviour.md) so every AI assistant in the repo follows it.
+
 ---
 
 # P0 — Foundation
