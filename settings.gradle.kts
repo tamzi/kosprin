@@ -1,5 +1,13 @@
 rootProject.name = "kosprin"
 
+pluginManagement {
+    includeBuild("buildLogic")
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
