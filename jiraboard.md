@@ -27,11 +27,11 @@ Unblocks every other band. Until P0 is done, services cannot start cleanly and t
 - [ ] KOS-2.5 — Tracing/MDC filter for correlation-ID propagation across HTTP and Kafka.
 
 ## KOS-3 — Local Development Infrastructure
-- [ ] KOS-3.1 — `docker-compose.yml` with PostgreSQL, Redis, Kafka (KRaft mode), Elasticsearch, Keycloak.
+- [x] KOS-3.1 — `docker-compose.yml` with PostgreSQL, Redis, Kafka (KRaft mode), Elasticsearch, Keycloak.
 - [ ] KOS-3.2 — Per-service `Dockerfile` (multi-stage, JLink runtime image).
-- [ ] KOS-3.3 — Seeded Keycloak realm export and Postgres init scripts checked in under `infra/`.
-- [ ] KOS-3.4 — Kafka topic auto-create / init script (videos, video-processed, notifications, analytics).
-- [ ] KOS-3.5 — Add `Makefile` or `taskfile.yml` for common dev tasks (`up`, `down`, `logs`, `psql`, `kafka-console`).
+- [~] KOS-3.3 — Postgres init scripts checked in under `infra/postgres-init/`. Keycloak realm export pending KOS-5 design.
+- [x] KOS-3.4 — Kafka topic auto-create via `kafka-init` one-shot container in compose.
+- [x] KOS-3.5 — `Makefile` for common dev tasks (`up`, `down`, `reset`, `logs`, `psql`, `redis-cli`, `kafka-topics`, `build`, `test`).
 
 ---
 
