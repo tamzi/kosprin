@@ -22,9 +22,9 @@ Unblocks every other band. Until P0 is done, services cannot start cleanly and t
 ## KOS-1 — Build System Foundation
 - [x] KOS-1.1 — Fix root [`build.gradle.kts`](build.gradle.kts): plugins declared with `apply false`, applied per submodule.
 - [x] KOS-1.2 — Replace `ext[...]` version pinning with a `gradle/libs.versions.toml` version catalog.
-- [ ] KOS-1.3 — Add `buildLogic/` convention plugins: `kosprin.kotlin-library`, `kosprin.spring-service`, `kosprin.kafka-consumer`.
+- [x] KOS-1.3 — `buildLogic/` convention plugins: `kosprin.kotlin-library`, `kosprin.spring-service`, `kosprin.kafka-consumer`.
 - [x] KOS-1.4 — Populate every empty submodule `build.gradle.kts`.
-- [ ] KOS-1.5 — Wire Detekt + ktlint + JaCoCo at the root with shared config.
+- [x] KOS-1.5 — Detekt + ktlint + JaCoCo wired through convention plugins; ben-manes versions plugin at root for `dependencyUpdates`.
 - [x] KOS-1.6 — Add `dependencyResolutionManagement` block to `settings.gradle.kts`.
 
 ## KOS-2 — Common Module
@@ -40,6 +40,16 @@ Unblocks every other band. Until P0 is done, services cannot start cleanly and t
 - [~] KOS-3.3 — Postgres init scripts checked in under `infra/postgres-init/`. Keycloak realm export pending KOS-5 design.
 - [x] KOS-3.4 — Kafka topic auto-create via `kafka-init` one-shot container in compose.
 - [x] KOS-3.5 — `Makefile` for common dev tasks (`up`, `down`, `reset`, `logs`, `psql`, `redis-cli`, `kafka-topics`, `build`, `test`).
+
+## KOS-14 — Tests (unit, integration, E2E)
+Moved into P0 — services land with tests, not retrofitted later.
+
+- [ ] KOS-14.1 — Unit-test scaffolding per module: **JUnit 6** (BOM in convention plugin), MockK, Kotest assertions.
+- [ ] KOS-14.2 — Integration tests with Testcontainers (Postgres, Kafka, Redis, ES) under `src/integrationTest/kotlin`.
+- [ ] KOS-14.3 — Contract tests between producers/consumers (Spring Cloud Contract or Pact).
+- [ ] KOS-14.4 — GitHub Actions: `build`, `test`, `detekt`, `ktlint`, `dependencyUpdates`, image build & push.
+- [ ] KOS-14.5 — Coverage gate (JaCoCo, ≥70% line, ≥60% branch).
+- [ ] KOS-14.6 — End-to-end tests against the full local stack (Docker Compose) — one happy-path + one failure path per business workflow (upload → process → search → feed → notify).
 
 ---
 
@@ -153,12 +163,7 @@ The system is ready for actual users.
 - [ ] KOS-13.6 — Loki for log aggregation (queryable from the same Grafana).
 - [ ] KOS-13.7 — Dead-letter dashboards: per-DLT queue depth visible in Grafana.
 
-## KOS-14 — Testing & CI
-- [ ] KOS-14.1 — Unit-test scaffolding per module (JUnit 5, MockK, Kotest).
-- [ ] KOS-14.2 — Integration tests with Testcontainers (Postgres, Kafka, Redis, ES).
-- [ ] KOS-14.3 — Contract tests between producers/consumers (Spring Cloud Contract or Pact).
-- [ ] KOS-14.4 — GitHub Actions: `build`, `test`, `detekt`, image build & push.
-- [ ] KOS-14.5 — Coverage gate (JaCoCo, ≥70% line, ≥60% branch).
+*KOS-14 (Tests) was promoted to P0 — see above.*
 
 ## KOS-15 — Security Hardening
 - [ ] KOS-15.1 — Externalised secrets via env vars + Kubernetes secrets.
