@@ -20,8 +20,7 @@ The canonical project rules live in [AGENTS.md](mdc:AGENTS.md) and the [agents/]
 - Build system: [docs/tech/buildSystem.md](mdc:docs/tech/buildSystem.md)
 - Messaging: [docs/tech/messaging.md](mdc:docs/tech/messaging.md)
 - Local dev: [docs/tech/localDevelopment.md](mdc:docs/tech/localDevelopment.md)
-- Active work: [jiraboard.md](mdc:jiraboard.md)
-- Improvement backlog: [docs/improvements.md](mdc:docs/improvements.md)
+- All work and backlog: [jiraboard.md](mdc:jiraboard.md) — single source of truth, P0–P9 priority bands.
 
 ## Rule modules
 - [agents/rules/architecture.md](mdc:agents/rules/architecture.md)
