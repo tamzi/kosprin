@@ -3,6 +3,7 @@
 Rules about how an assistant should operate, regardless of the task.
 
 ## Always
+- **Finish what you start.** Complete every story in an active epic before opening a different epic. Within an epic, complete the current story end-to-end before starting another. If a story is genuinely blocked by a dependency, mark it `[~]` (or `[!]`) with a one-line reason and continue with the rest of the same epic; never silently skip a story to jump elsewhere.
 - Read the relevant doc(s) under `docs/tech/` and `agents/rules/` before non-trivial changes.
 - State assumptions out loud and ask when ambiguity could waste time.
 - Prefer editing existing files to creating new ones.
