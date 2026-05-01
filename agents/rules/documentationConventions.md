@@ -26,4 +26,4 @@
 - Architecture diagrams live in `docs/tech/systemdesign.md` (mermaid, not images).
 - Project-level rules live in `agents/rules/`.
 - Task playbooks live in `agents/skills/`.
-- Active work and improvement backlog live in `jiraboard.md` and `docs/improvements.md`.
+- Active work and improvement backlog live in `jiraboard.md` (single source of truth, organised by priority bands P0–P9).
