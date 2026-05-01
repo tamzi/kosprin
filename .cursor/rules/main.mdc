@@ -34,5 +34,6 @@ The canonical project rules live in [AGENTS.md](mdc:AGENTS.md) and the [agents/]
 - [agents/skills/runTests.md](mdc:agents/skills/runTests.md)
 - [agents/skills/addNewService.md](mdc:agents/skills/addNewService.md)
 - [agents/skills/addKafkaTopic.md](mdc:agents/skills/addKafkaTopic.md)
+- [agents/skills/checkDependencyUpdates.md](mdc:agents/skills/checkDependencyUpdates.md)
 
 If a rule conflicts with what the task asks for, surface the conflict — don't silently work around it.
