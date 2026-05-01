@@ -23,9 +23,10 @@ Use [mermaid chart](https://www.mermaidchart.com/) to draw / modify the architec
 ```mermaid
 flowchart TB
 %% ──────────────── CLUSTERS ────────────────
-subgraph EXTERNAL["Client & Edge"]
+subgraph EXTERNAL["Clients & Edge"]
   direction TB
-  C["Client\n(Web / Mobile)"]
+  CR["dashboard-react\n(end-user app)"]
+  CV["dashboard-vue\n(operator dashboard)"]
   LB["Load Balancer"]
   CDN["CDN &\nStatic Content"]
 end
@@ -75,15 +76,21 @@ subgraph INFRA["Supporting Infrastructure"]
 end
 
 %% ──────────────── EDGES ────────────────
-C --- CDN
-C -- HTTPS --> LB
+CR --- CDN
+CV --- CDN
+CR -- HTTPS --> LB
+CV -- HTTPS --> LB
 LB --> GW
 
 GW <-- "OIDC (JWT)" --> KC
 
+%% dashboard-react consumes the user-facing services
 GW --> MS_META
 GW --> MS_SEARCH
 GW --> MS_FEED
+GW --> MS_NOTIF
+
+%% dashboard-vue consumes analytics + service health
 GW --> MS_ANALYTICS
 
 MS_META  -- produce  --> topicVideos
@@ -121,7 +128,7 @@ PROM --> GRAF
 classDef svc fill:#1f78c1,stroke:#ffffff,color:#ffffff;
 classDef datastore fill:#6a3d9a,stroke:#ffffff,color:#ffffff;
 
-class C,LB,GW,KC,MS_META,MS_VIDEO,MS_SEARCH,MS_FEED,MS_NOTIF,MS_ANALYTICS svc;
+class CR,CV,LB,GW,KC,MS_META,MS_VIDEO,MS_SEARCH,MS_FEED,MS_NOTIF,MS_ANALYTICS svc;
 class CDN,topicVideos,topicProcessed,topicNotifs,topicAnalytics,PG_META,REDIS_META,ES,PG_FEED,PG_ANALYTICS datastore;
 
 %% Highlight core microservices
