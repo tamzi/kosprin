@@ -12,6 +12,7 @@ The repo's documentation, organised by audience.
 - [`tech/messaging.md`](tech/messaging.md) — Kafka topics, headers, idempotency conventions.
 - [`tech/security.md`](tech/security.md) — Keycloak/IAM, service-to-service auth, secrets.
 - [`tech/observability.md`](tech/observability.md) — metrics, logs, traces, alerts.
+- [`tech/frontends.md`](tech/frontends.md) — split frontends (`dashboard-react`, `dashboard-vue`).
 - [`tech/buildSystem.md`](tech/buildSystem.md) — Gradle multi-module setup and convention plugins.
 - [`tech/localDevelopment.md`](tech/localDevelopment.md) — clone-to-run instructions.
 - [`tech/LoadBalancer.md`](tech/LoadBalancer.md) — why there is no load-balancer microservice.
