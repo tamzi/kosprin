@@ -133,6 +133,20 @@ Spring Cloud Gateway as the single ingress for all services.
 - [ ] KOS-17.4 — External Secrets Operator integration.
 - [ ] KOS-17.5 — Blue/green or canary release strategy via Argo Rollouts.
 
+## KOS-19 — Split Frontends (React + Vue)
+Two independently-deployable single-page apps, each owning a different audience. See [`docs/tech/frontends.md`](docs/tech/frontends.md).
+
+- [ ] KOS-19.1 — Rename `dashboard/` → `dashboard-react/`; update docs and references.
+- [ ] KOS-19.2 — Add missing webpack loaders (`html-webpack-plugin`, `ts-loader`, `css-loader`, `style-loader`) so the React app builds and serves.
+- [ ] KOS-19.3 — Implement React routes: `/` (feed), `/search`, `/videos/:id`, `/upload`, `/notifications`, `/profile`.
+- [ ] KOS-19.4 — Wire React app to Keycloak via the JS adapter; gate routes by `user`/`creator` roles.
+- [ ] KOS-19.5 — Scaffold `dashboard-vue/` with Vue 3 + TypeScript + Vuetify + Vite (or webpack 5).
+- [ ] KOS-19.6 — Implement Vue routes: `/` (KPI overview), `/content`, `/users`, `/services`, `/kafka`.
+- [ ] KOS-19.7 — Wire Vue app to Keycloak; gate to `moderator`/`admin` roles only.
+- [ ] KOS-19.8 — Auto-generate TS API clients from each service's OpenAPI spec; share the generator config.
+- [ ] KOS-19.9 — Per-frontend CI pipeline (lint, typecheck, build).
+- [ ] KOS-19.10 — Per-frontend Dockerfile + nginx static-serving image.
+
 ## KOS-18 — Agent-Agnostic Rules Layout
 Rule and skill files vendor-neutral, with thin wrappers per assistant.
 
