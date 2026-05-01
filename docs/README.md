@@ -20,11 +20,8 @@ The repo's documentation, organised by audience.
 ## Tutorial
 - [`tutorial.md`](tutorial.md) — narrative walk-through of the architecture.
 
-## Improvements
-- [`improvements.md`](improvements.md) — backlog of optional enhancements beyond the baseline.
-
 ## Project tracking
-- [`/jiraboard.md`](../jiraboard.md) — epics and sub-tasks (faux Jira project key `KOS`).
+- [`/jiraboard.md`](../jiraboard.md) — single source of truth for all work, organised in priority bands P0–P9.
 
 ## Agents
 - [`/AGENTS.md`](../AGENTS.md) — entry point for any AI assistant working in the repo.
