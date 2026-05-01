@@ -13,7 +13,7 @@ Read these before making non-trivial changes:
 - [`docs/tech/services.md`](docs/tech/services.md) — per-module summary.
 - [`docs/tech/messaging.md`](docs/tech/messaging.md) — Kafka topics + idempotency conventions.
 - [`docs/tech/buildSystem.md`](docs/tech/buildSystem.md) — Gradle setup and conventions.
-- [`docs/improvements.md`](docs/improvements.md) — improvement backlog.
+- [`/jiraboard.md`](jiraboard.md) — single source of truth for all work, organised in priority bands.
 
 ## Rules
 The rule modules below are the contract. Each is short and concrete.
