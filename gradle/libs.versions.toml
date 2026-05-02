@@ -10,6 +10,9 @@ detekt = "1.23.7"
 ktlint = "12.1.1"
 benManesVersions = "0.51.0"
 junit = "6.0.3"
+mockk = "1.13.17"
+kotest = "5.9.1"
+testcontainers = "1.20.4"
 
 [libraries]
 springBootDependencies = { group = "org.springframework.boot", name = "spring-boot-dependencies", version.ref = "springBoot" }
@@ -33,6 +36,13 @@ flyway = { group = "org.flywaydb", name = "flyway-core" }
 springdocOpenApi = { group = "org.springdoc", name = "springdoc-openapi-starter-webmvc-ui", version.ref = "springdoc" }
 junitBom = { group = "org.junit", name = "junit-bom", version.ref = "junit" }
 junitJupiter = { group = "org.junit.jupiter", name = "junit-jupiter" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+kotestAssertionsCore = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotest" }
+testcontainersCore = { group = "org.testcontainers", name = "testcontainers", version.ref = "testcontainers" }
+testcontainersJunit = { group = "org.testcontainers", name = "junit-jupiter", version.ref = "testcontainers" }
+testcontainersKafka = { group = "org.testcontainers", name = "kafka", version.ref = "testcontainers" }
+testcontainersPostgresql = { group = "org.testcontainers", name = "postgresql", version.ref = "testcontainers" }
+testcontainersRedis = { group = "org.testcontainers", name = "toxiproxy", version.ref = "testcontainers" }
 
 [plugins]
 springBoot = { id = "org.springframework.boot", version.ref = "springBoot" }

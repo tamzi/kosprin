@@ -10,4 +10,9 @@ dependencies {
     "compileOnly"(libs.findLibrary("springBootAutoconfigure").get())
     "compileOnly"("org.springframework.boot:spring-boot-starter-web")
     "compileOnly"(libs.findLibrary("springKafka").get())
+    // Mirror compileOnly deps onto the test classpath so test code can reference Spring types
+    "testImplementation"(libs.findLibrary("springBootAutoconfigure").get())
+    "testImplementation"("org.springframework.boot:spring-boot-starter-web")
+    "testImplementation"(libs.findLibrary("springKafka").get())
+    "testImplementation"(libs.findLibrary("springBootStarterTest").get())
 }
