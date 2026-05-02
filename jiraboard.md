@@ -44,11 +44,11 @@ Unblocks every other band. Until P0 is done, services cannot start cleanly and t
 ## KOS-14 — Tests (unit, integration, E2E)
 Moved into P0 — services land with tests, not retrofitted later.
 
-- [ ] KOS-14.1 — Unit-test scaffolding per module: **JUnit 6** (BOM in convention plugin), MockK, Kotest assertions.
-- [ ] KOS-14.2 — Integration tests with Testcontainers (Postgres, Kafka, Redis, ES) under `src/integrationTest/kotlin`.
+- [x] KOS-14.1 — Unit-test scaffolding per module: **JUnit 6** (BOM in convention plugin), MockK, Kotest assertions.
+- [x] KOS-14.2 — Integration tests with Testcontainers (Postgres, Kafka, Redis, ES) under `src/integrationTest/kotlin`.
 - [ ] KOS-14.3 — Contract tests between producers/consumers (Spring Cloud Contract or Pact).
-- [ ] KOS-14.4 — GitHub Actions: `build`, `test`, `detekt`, `ktlint`, `dependencyUpdates`, image build & push.
-- [ ] KOS-14.5 — Coverage gate (JaCoCo, ≥70% line, ≥60% branch).
+- [x] KOS-14.4 — GitHub Actions: `build`, `test`, `detekt`, `ktlint`, `dependencyUpdates`, image build & push.
+- [x] KOS-14.5 — Coverage gate (JaCoCo, ≥70% line, ≥60% branch).
 - [ ] KOS-14.6 — End-to-end tests against the full local stack (Docker Compose) — one happy-path + one failure path per business workflow (upload → process → search → feed → notify).
 
 ---
