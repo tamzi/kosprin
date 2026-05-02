@@ -28,11 +28,11 @@ Unblocks every other band. Until P0 is done, services cannot start cleanly and t
 - [x] KOS-1.6 — Add `dependencyResolutionManagement` block to `settings.gradle.kts`.
 
 ## KOS-2 — Common Module
-- [ ] KOS-2.1 — Define error envelope types (`ApiError`, `ProblemDetail` per RFC 7807).
-- [ ] KOS-2.2 — Define shared event base types and Kafka headers (correlation ID, source, schema version).
-- [ ] KOS-2.3 — `Result<T>` / `Outcome<T>` helper for service-layer returns.
-- [ ] KOS-2.4 — Global exception handler + `@ControllerAdvice` autoconfig.
-- [ ] KOS-2.5 — Tracing/MDC filter for correlation-ID propagation across HTTP and Kafka.
+- [x] KOS-2.1 — Define error envelope types (`ApiError`, `ProblemDetail` per RFC 7807).
+- [x] KOS-2.2 — Define shared event base types and Kafka headers (correlation ID, source, schema version).
+- [x] KOS-2.3 — `Result<T>` / `Outcome<T>` helper for service-layer returns.
+- [x] KOS-2.4 — Global exception handler + `@ControllerAdvice` autoconfig.
+- [x] KOS-2.5 — Tracing/MDC filter for correlation-ID propagation across HTTP and Kafka.
 
 ## KOS-3 — Local Development Infrastructure
 - [x] KOS-3.1 — `docker-compose.yml` with PostgreSQL, Redis, Kafka (KRaft mode), Elasticsearch, Keycloak.
