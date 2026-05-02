@@ -1,9 +1,8 @@
 plugins {
-    id("kosprin.kotlin-library")
+    id("kosprin.spring-library")
 }
 
 dependencies {
     implementation(libs.kotlinReflect)
     implementation(libs.jacksonModuleKotlin)
-    testImplementation(kotlin("test"))
 }

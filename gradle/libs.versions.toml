@@ -12,6 +12,8 @@ benManesVersions = "0.51.0"
 junit = "6.0.3"
 
 [libraries]
+springBootDependencies = { group = "org.springframework.boot", name = "spring-boot-dependencies", version.ref = "springBoot" }
+springBootAutoconfigure = { group = "org.springframework.boot", name = "spring-boot-autoconfigure" }
 springCloudDependencies = { group = "org.springframework.cloud", name = "spring-cloud-dependencies", version.ref = "springCloud" }
 jacksonModuleKotlin = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin" }
 kotlinReflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect" }
