@@ -236,34 +236,34 @@ Already largely done. Tracked here for completeness.
 ---
 
 # P8 — Beyond baseline
-Optional enhancements that materially raise quality, reliability, or developer velocity. Take when there is bandwidth, or promote into the band where they unlock the most value.
+Optional enhancements that materially raise quality, reliability, or developer velocity. Take when there is bandwidth, or promote into the band where they unlock the most value. Each item is epic-sized — when promoted, it grows sub-stories like any other epic.
 
 ## Reliability & data integrity
-- [ ] KOS-S1 — **Outbox pattern** for reliable Kafka publishing from services that also write to Postgres.
-- [ ] KOS-S2 — **Kafka schema registry** (Avro or Protobuf) replacing JSON-by-convention.
-- [ ] KOS-S3 — **Saga orchestration** for multi-service workflows (upload → process → notify).
+- [ ] KOS-21 — **Outbox pattern** for reliable Kafka publishing from services that also write to Postgres.
+- [ ] KOS-22 — **Kafka schema registry** (Avro or Protobuf) replacing JSON-by-convention.
+- [ ] KOS-23 — **Saga orchestration** for multi-service workflows (upload → process → notify).
 
 ## Performance
-- [ ] KOS-S4 — **gRPC for internal RPC** — keep REST at the edge.
-- [ ] KOS-S5 — **CQRS read models for analytics** with materialized views.
-- [ ] KOS-S6 — **Multi-region read replicas** for the metadata DB.
-- [ ] KOS-S7 — **Multi-tier cache** (Caffeine in-process + Redis shared).
-- [ ] KOS-S8 — **HTTP/2 (or HTTP/3)** at the gateway.
+- [ ] KOS-24 — **gRPC for internal RPC** — keep REST at the edge.
+- [ ] KOS-25 — **CQRS read models for analytics** with materialized views.
+- [ ] KOS-26 — **Multi-region read replicas** for the metadata DB.
+- [ ] KOS-27 — **Multi-tier cache** (Caffeine in-process + Redis shared).
+- [ ] KOS-28 — **HTTP/2 (or HTTP/3)** at the gateway.
 
 ## Observability
-- [ ] KOS-S9 — **SLOs per service** with error-budget burn-rate alerts.
-- [ ] KOS-S10 — **Continuous profiling** (Pyroscope).
+- [ ] KOS-29 — **SLOs per service** with error-budget burn-rate alerts.
+- [ ] KOS-30 — **Continuous profiling** (Pyroscope).
 
 ## Security
-- [ ] KOS-S11 — **Signed Kafka events** for audit trails on regulated data.
-- [ ] KOS-S12 — **Image signing** (cosign) and admission-controller verification.
-- [ ] KOS-S13 — **Zero-trust ingress** with WAF in front of the gateway.
+- [ ] KOS-31 — **Signed Kafka events** for audit trails on regulated data.
+- [ ] KOS-32 — **Image signing** (cosign) and admission-controller verification.
+- [ ] KOS-33 — **Zero-trust ingress** with WAF in front of the gateway.
 
 ## Operability
-- [ ] KOS-S14 — **Feature flags** (Unleash, PostHog, or LaunchDarkly).
-- [ ] KOS-S15 — **Chaos testing** (LitmusChaos or Chaos Mesh).
-- [ ] KOS-S16 — **Backup & restore drills** for Postgres and Elasticsearch on a schedule.
+- [ ] KOS-34 — **Feature flags** (Unleash, PostHog, or LaunchDarkly).
+- [ ] KOS-35 — **Chaos testing** (LitmusChaos or Chaos Mesh).
+- [ ] KOS-36 — **Backup & restore drills** for Postgres and Elasticsearch on a schedule.
 
 ## Frontend (beyond KOS-12 / KOS-13)
-- [ ] KOS-S17 — **Storybook** for the design system.
-- [ ] KOS-S18 — **Visual regression tests** (Chromatic or Percy).
+- [ ] KOS-37 — **Storybook** for the design system.
+- [ ] KOS-38 — **Visual regression tests** (Chromatic or Percy).
