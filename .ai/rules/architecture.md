@@ -1,3 +1,9 @@
+---
+name: architecture
+description: Module-boundary, sync-vs-async, idempotency, auth, observability, and data constraints across services.
+type: rule
+---
+
 # Architecture rules
 
 These constrain *how* code is added across services. The full architectural picture lives in [`docs/tech/systemdesign.md`](../../docs/tech/systemdesign.md); this file lists the rules that flow from it.

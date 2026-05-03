@@ -1,3 +1,9 @@
+---
+name: runLocalStack
+description: Bring up Postgres + Redis + Kafka + Elasticsearch + Keycloak via docker-compose; start a service.
+type: skill
+---
+
 # Skill — Run the local stack
 
 Use this when the user wants to run kosprin locally, or when a service-level test needs real dependencies.

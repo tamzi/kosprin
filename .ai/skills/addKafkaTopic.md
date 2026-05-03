@@ -1,3 +1,10 @@
+---
+name: addKafkaTopic
+description: Register a new Kafka topic; wire producer/consumer with required headers, dedupe and DLT.
+type: skill
+uses: [kafkaEventPublish]
+---
+
 # Skill — Add a Kafka topic
 
 Use this when a new event type needs to flow between services.

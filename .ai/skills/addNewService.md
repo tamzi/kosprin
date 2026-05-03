@@ -1,3 +1,10 @@
+---
+name: addNewService
+description: Cookie-cutter steps for a new *-service — gradle settings, build script, gateway route, docs, tests.
+type: skill
+uses: [kotlinSpringConventions, springTestPatterns, openapiAnnotate]
+---
+
 # Skill — Add a new service
 
 Use this playbook when the user asks to add a new microservice (e.g. `comment-service`, `recommendation-service`).

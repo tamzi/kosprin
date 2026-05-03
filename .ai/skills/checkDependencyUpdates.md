@@ -1,6 +1,12 @@
+---
+name: checkDependencyUpdates
+description: Pre-push sweep — list outdated Gradle and npm deps and bump the cleanly-bumpable ones.
+type: skill
+---
+
 # Skill — Check dependency updates
 
-Run this before every push, and any time a dependency is touched. The rule that drives it lives in [`agents/rules/agentBehaviour.md`](../rules/agentBehaviour.md) ("Always — use the latest stable versions").
+Run this before every push, and any time a dependency is touched. The rule that drives it lives in [`.ai/rules/agentBehaviour.md`](../rules/agentBehaviour.md) ("Always — use the latest stable versions").
 
 ## JVM (Gradle)
 

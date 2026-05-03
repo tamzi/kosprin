@@ -54,7 +54,7 @@ The split also gives the template a place to demonstrate **polyglot frontends** 
 
 **Why Vue for this side:** lighter runtime, simpler reactivity model — a common pick for chart-heavy admin tools. Smaller TS surface for the templates means snappy hot-reload during dashboard tweaks.
 
-**Source:** [`dashboard-vue/`](../../dashboard-vue/) (to be created — see [KOS-19](../../jiraboard.md)).
+**Source:** `dashboard-vue/` will be created by [KOS-13](../../jiraboard.md).
 
 ---
 

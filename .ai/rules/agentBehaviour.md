@@ -1,11 +1,17 @@
+---
+name: agentBehaviour
+description: Operating rules for AI assistants — finish-what-you-start, latest-stable deps, push policy, tooling preferences, memory hygiene.
+type: rule
+---
+
 # Agent behaviour
 
 Rules about how an assistant should operate, regardless of the task.
 
 ## Always
 - **Finish what you start.** Complete every story in an active epic before opening a different epic. Within an epic, complete the current story end-to-end before starting another. If a story is genuinely blocked by a dependency, mark it `[~]` (or `[!]`) with a one-line reason and continue with the rest of the same epic; never silently skip a story to jump elsewhere.
-- **Use the latest stable versions** of plugins, libraries, and tools. When introducing a new dependency, pick the latest stable release; do not pin to an older version unless there is a written reason. **Before every push**, run the dependency-update check ([`agents/skills/checkDependencyUpdates.md`](../skills/checkDependencyUpdates.md)) and bump any cleanly-upgradable deps in the same PR. Document deliberate non-upgrades with a one-line `# pinned: <reason>` comment in `gradle/libs.versions.toml` or the relevant `package.json`.
-- Read the relevant doc(s) under `docs/tech/` and `agents/rules/` before non-trivial changes.
+- **Use the latest stable versions** of plugins, libraries, and tools. When introducing a new dependency, pick the latest stable release; do not pin to an older version unless there is a written reason. **Before every push**, run the dependency-update check ([`.ai/skills/checkDependencyUpdates.md`](../skills/checkDependencyUpdates.md)) and bump any cleanly-upgradable deps in the same PR. Document deliberate non-upgrades with a one-line `# pinned: <reason>` comment in `gradle/libs.versions.toml` or the relevant `package.json`.
+- Read the relevant doc(s) under `docs/tech/` and `.ai/rules/` before non-trivial changes.
 - State assumptions out loud and ask when ambiguity could waste time.
 - Prefer editing existing files to creating new ones.
 - For ambiguous "what should we do about X?" questions, respond in 2–3 sentences with a recommendation, the main tradeoff, and an offer to elaborate. Do not start implementing.

@@ -1,3 +1,9 @@
+---
+name: codeStyle
+description: Kotlin/JDK 21 + TypeScript conventions, naming, package layout, error handling, formatting.
+type: rule
+---
+
 # Code style
 
 ## Kotlin

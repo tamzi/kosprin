@@ -1,3 +1,9 @@
+---
+name: runTests
+description: Run unit + integration tests for a single module or the whole tree.
+type: skill
+---
+
 # Skill — Run tests
 
 ## Single module

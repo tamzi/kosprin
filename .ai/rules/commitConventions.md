@@ -1,3 +1,9 @@
+---
+name: commitConventions
+description: Commit subjects past tense, no body, no conventional-commits prefix, atomic; one .md per commit.
+type: rule
+---
+
 # Commit conventions
 
 ## Format

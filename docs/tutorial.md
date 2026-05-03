@@ -13,7 +13,7 @@ The architecture follows the design in the [architecture diagram](tech/systemdes
 - Distributes incoming requests across multiple instances of the API gateway or services. 
 - In cloud environments, this could be an external load balancer. 
 - (For our local setup, Docker/Kubernetes will handle routing, and we won’t implement a separate load balancer service explicitly.)
-- [More on why we are not implementing the load balancer as a springboot service](tech/LoadBalancer.md).
+- [More on why we are not implementing the load balancer as a springboot service](tech/loadBalancer.md).
  
 
 **API Gateway:** 

@@ -13,7 +13,7 @@ The old `docs/improvements.md` backlog was consolidated into this file; the stan
 - **Tests and Dockerfiles ride with the service.** Each service epic ends with `*.N — Unit tests`, `*.N — Integration tests`, `*.N — Dockerfile`. There is no separate "Tests" or "Dockerize all services" epic.
 - **Stretch items in P8 do not start until** there is real bandwidth, or until one of them unlocks higher-priority work — at which point promote it into the band where it belongs.
 
-This rule is also captured in [`agents/rules/agentBehaviour.md`](agents/rules/agentBehaviour.md) so every AI assistant in the repo follows it.
+This rule is also captured in [`.ai/rules/agentBehaviour.md`](.ai/rules/agentBehaviour.md) so every AI assistant in the repo follows it.
 
 ---
 
@@ -226,12 +226,12 @@ The system is ready for actual users.
 Already largely done. Tracked here for completeness.
 
 ## KOS-20 — Agent-Agnostic Rules Layout
-- [x] KOS-20.1 — Source-of-truth `agents/` directory split into `rules/` and `skills/`.
+- [x] KOS-20.1 — Source-of-truth `.ai/` directory split into `rules/`, `skills/`, `agents/`, `workflows/`, `memory/`.
 - [x] KOS-20.2 — `AGENTS.md` root entry point.
 - [x] KOS-20.3 — `CLAUDE.md` wrapper.
 - [x] KOS-20.4 — `.cursor/rules/main.mdc` wrapper for Cursor.
-- [ ] KOS-20.5 — `.github/copilot-instructions.md` wrapper for GitHub Copilot.
-- [ ] KOS-20.6 — Pre-commit hook that fails when a wrapper drifts from the canonical rules.
+- [x] KOS-20.5 — `.github/copilot-instructions.md` wrapper for GitHub Copilot.
+- [x] KOS-20.6 — Pre-commit hook that fails when a wrapper drifts from the canonical rules.
 
 ---
 

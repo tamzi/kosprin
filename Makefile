@@ -1,4 +1,4 @@
-.PHONY: help up down reset logs ps psql redis-cli kafka-topics build test clean
+.PHONY: help up down reset logs ps psql redis-cli kafka-topics build test clean install-hooks validate-ai
 
 help:
 	@echo "Common dev tasks:"
@@ -13,6 +13,8 @@ help:
 	@echo "  make build        - ./gradlew build"
 	@echo "  make test         - ./gradlew test"
 	@echo "  make clean        - ./gradlew clean"
+	@echo "  make validate-ai  - validate AGENTS.md and the .ai/ knowledge graph"
+	@echo "  make install-hooks - install repo-local git hooks"
 
 up:
 	docker compose up -d
@@ -46,3 +48,9 @@ test:
 
 clean:
 	./gradlew clean
+
+validate-ai:
+	scripts/validateAiSetup.py
+
+install-hooks:
+	git config core.hooksPath .githooks

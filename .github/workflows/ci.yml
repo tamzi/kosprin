@@ -13,6 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Validate AI setup
+        run: scripts/validateAiSetup.py
+
       - uses: actions/setup-java@v4
         with:
           java-version: '21'
