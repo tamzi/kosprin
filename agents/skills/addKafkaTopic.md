@@ -20,7 +20,7 @@ Add the topic to the table in [`docs/tech/messaging.md`](../../docs/tech/messagi
 ## 3. Producer
 - Set the standard headers: `correlationId`, `eventId` (UUID v7), `source`, `schemaVersion`.
 - Use the producer wrapper from `common/` rather than a raw `KafkaTemplate`.
-- For services that also persist to Postgres, use the outbox pattern (KOS-S1) once it is available; until then, a TODO comment is acceptable but the gap must be flagged.
+- For services that also persist to Postgres, use the outbox pattern (KOS-21) once it is available; until then, a TODO comment is acceptable but the gap must be flagged.
 
 ## 4. Consumer
 - Idempotent by construction — dedupe on `eventId`.
