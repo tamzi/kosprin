@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+message_file="${1:-}"
+if [[ -z "$message_file" || ! -f "$message_file" ]]; then
+  echo "commit-msg: missing commit message file" >&2
+  exit 2
+fi
+
+subject="$(sed -n '1p' "$message_file")"
+body="$(
+  sed '1d' "$message_file" |
+    sed '/^#/d' |
+    sed '/^$/d' |
+    sed '/^Co-[Aa]uthored-[Bb]y:/d' |
+    tr -d '\n'
+)"
+
+violations=0
+
+check_failed() {
+  echo "commit-msg: $1" >&2
+  violations=$((violations + 1))
+}
+
+[[ -n "$subject" ]] || check_failed "subject cannot be empty"
+[[ -z "$body" ]] || check_failed "commit message must not have a body"
+[[ ! "$subject" =~ \.$ ]] || check_failed "subject must not end with a period"
+[[ ${#subject} -le 72 ]] || check_failed "subject must be 72 characters or fewer"
+
+if [[ "$subject" =~ ^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)(\(.*\))?:\ .+ ]]; then
+  check_failed "subject must not use conventional-commit prefixes"
+fi
+
+if [[ "$subject" =~ ^(Add|Fix|Remove|Update|Delete|Create|Implement|Refactor|Move|Change|Merge|Revert)\ .+ ]]; then
+  check_failed "subject must use past tense"
+fi
+
+if [[ "$subject" =~ ^(Adding|Fixing|Removing|Updating|Deleting|Creating|Implementing|Refactoring|Moving|Changing)\ .+ ]]; then
+  check_failed "subject must not use gerund tense"
+fi
+
+if [[ "$subject" =~ ^(WIP|wip|Work\ in\ progress|TODO|FIXME|TBD|temp|temporary).*$ ]]; then
+  check_failed "subject must not be WIP or temporary"
+fi
+
+if [[ "$subject" =~ ^(Updated\ files|Fixed\ stuff|Changes|Minor\ changes|Updates|Fixes)$ ]]; then
+  check_failed "subject is too generic"
+fi
+
+if [[ "$violations" -gt 0 ]]; then
+  exit 1
+fi
