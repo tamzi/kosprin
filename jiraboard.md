@@ -12,13 +12,14 @@ The old `docs/improvements.md` backlog was consolidated into this file; the stan
 - If a story is genuinely **blocked** by a dependency, mark it `[!]` with a one-line reason in the bullet, then continue with the rest of the same epic. Never silently skip a story to jump elsewhere.
 - **Tests and Dockerfiles ride with the service.** Each service epic ends with `*.N — Unit tests`, `*.N — Integration tests`, `*.N — Dockerfile`. There is no separate "Tests" or "Dockerize all services" epic.
 - **Stretch items in P8 do not start until** there is real bandwidth, or until one of them unlocks higher-priority work — at which point promote it into the band where it belongs.
+- **Done items are grouped at the top of the board** for clarity. The "To do" section below holds only open work in execution order — never jump back to a done item or forward past an unstarted dependency.
 
 This rule is also captured in [`.ai/rules/agentBehaviour.md`](.ai/rules/agentBehaviour.md) so every AI assistant in the repo follows it.
 
 ---
 
-# P0 — Foundation
-Unblocks every other band. Until P0 is done, services cannot start cleanly and there is no local stack to run them against.
+# Done
+Completed work, grouped by epic. Move sub-stories here as they ship; do not delete. IDs stay stable so commits and docs that reference them keep resolving.
 
 ## KOS-1 — Build System Foundation
 - [x] KOS-1.1 — Fix root [`build.gradle.kts`](build.gradle.kts): plugins declared with `apply false`, applied per submodule.
@@ -40,6 +41,52 @@ Unblocks every other band. Until P0 is done, services cannot start cleanly and t
 - [x] KOS-3.2 — Postgres init scripts checked in under `infra/postgres-init/`.
 - [x] KOS-3.3 — Kafka topic auto-create via `kafka-init` one-shot container in compose.
 - [x] KOS-3.4 — `Makefile` for common dev tasks (`up`, `down`, `reset`, `logs`, `psql`, `redis-cli`, `kafka-topics`, `build`, `test`).
+
+## KOS-12 — dashboard-react (end-user)
+- [x] KOS-12.1 — Add npm `scripts` block (`start`, `build`, `lint`, `test`) to `dashboard/package.json`.
+
+## KOS-15 — Security Hardening
+- [x] KOS-15.6 — Dashboard dependency CVE clearance — 0 vulnerabilities on this branch.
+
+## KOS-16 — Documentation & Developer Experience
+- [x] KOS-16.4 — Fix link inconsistency in tutorial.
+- [x] KOS-16.5 — Add `docs/README.md` index.
+
+## KOS-17 — CI/CD Pipeline
+- [x] KOS-17.1 — GitHub Actions workflow: `build`, `test`, `detekt`, `ktlint`, `dependencyUpdates`, JaCoCo coverage gate; test + coverage report artifacts uploaded.
+
+## KOS-20 — Agent-Agnostic Rules Layout
+- [x] KOS-20.1 — Source-of-truth `.ai/` directory split into `rules/`, `skills/`, `agents/`, `workflows/`, `memory/`.
+- [x] KOS-20.2 — `AGENTS.md` root entry point.
+- [x] KOS-20.3 — `CLAUDE.md` wrapper.
+- [x] KOS-20.4 — `.cursor/rules/main.mdc` wrapper for Cursor.
+- [x] KOS-20.5 — `.github/copilot-instructions.md` wrapper for GitHub Copilot.
+- [x] KOS-20.6 — Pre-commit hook that fails when a wrapper drifts from the canonical rules.
+
+---
+
+# To do
+Only open work below. Bands run top-down (P0 before P1, etc.); items inside a band may run in parallel. Done sub-stories of any epic listed below already live in the **Done** section above.
+
+> P0 base scope (KOS-1.1–1.6, KOS-2.1–2.5, KOS-3.1–3.4) is fully complete — see Done. The items in P0 below are gap-fill stories surfaced afterwards; they still precede P1.
+>
+> P7 — Agent / Developer tooling (KOS-20) is fully complete. See Done.
+
+---
+
+# P0 — Foundation completion
+Gap-fill stories surfaced after the original P0 epics shipped. Every downstream service depends on these, so they precede P1.
+
+## KOS-1 — Build System Foundation (continued)
+- [ ] KOS-1.7 — Per-service `application.yml` scaffolds (server port, app name, schema-validation modes) so each service can boot. Today only `common` and `buildLogic` have populated `src/main/`.
+- [ ] KOS-1.8 — Stub `README.md` (< 100 lines) in every module: `common`, `gateway`, `metadata-service`, `video-service`, `search-service`, `feed-service`, `notification-service`, `analytics-service`, `dashboard`. Polished pass deferred to KOS-16.1.
+- [ ] KOS-1.9 — Extend `.githooks/pre-commit` with detekt + ktlint runs (today it only invokes `validateAiSetup.py`); commit-format validation already lives in `.githooks/commit-msg`.
+
+## KOS-2 — Common Module (continued)
+- [ ] KOS-2.6 — `AbstractIntegrationTest` base in `common` with shared Testcontainers wiring (Postgres, Kafka, Redis, Elasticsearch, Keycloak) + `@DynamicPropertySource` helpers, so every service epic's IT stories don't reinvent the boilerplate.
+
+## KOS-3 — Local Development Infrastructure (continued)
+- [ ] KOS-3.5 — Extract Kafka topic list from `docker-compose.yml`'s inline `kafka-init` command into a single source (`infra/kafka-topics.json` or env-var-driven script) so adding a topic does not require editing the compose command.
 
 ---
 
@@ -151,7 +198,6 @@ End-to-end user-visible features land here.
 Two independently-deployable apps. Design: [`docs/tech/frontends.md`](docs/tech/frontends.md).
 
 ## KOS-12 — dashboard-react (end-user)
-- [x] KOS-12.1 — Add npm `scripts` block (`start`, `build`, `lint`, `test`) to `dashboard/package.json`.
 - [ ] KOS-12.2 — Rename `dashboard/` → `dashboard-react/`; update docs and references.
 - [ ] KOS-12.3 — Add missing webpack loaders (`html-webpack-plugin`, `ts-loader`, `css-loader`, `style-loader`) so the React app builds and serves.
 - [ ] KOS-12.4 — Implement React routes: `/` (feed), `/search`, `/videos/:id`, `/upload`, `/notifications`, `/profile`.
@@ -188,19 +234,20 @@ The system is ready for actual users.
 - [ ] KOS-15.3 — Strict CORS / CSP at the gateway.
 - [ ] KOS-15.4 — mTLS or service-mesh encryption between internal services (Istio/Linkerd).
 - [ ] KOS-15.5 — Audit log for admin operations (sink to `analytics` topic).
-- [x] KOS-15.6 — Dashboard dependency CVE clearance — 0 vulnerabilities on this branch.
 
 ## KOS-16 — Documentation & Developer Experience
 - [ ] KOS-16.1 — `README.md` per module (< 100 lines, links to detail in `docs/`).
 - [ ] KOS-16.2 — OpenAPI specs aggregated and rendered (Swagger UI) behind the gateway.
 - [ ] KOS-16.3 — `docs/onboarding.md` — five-minute "clone and run" guide.
-- [x] KOS-16.4 — Fix link inconsistency in tutorial.
-- [x] KOS-16.5 — Add `docs/README.md` index.
 - [ ] KOS-16.6 — Architecture Decision Records under `docs/adr/` for significant choices.
+  - Land `docs/adr/template.md` and `docs/adr/README.md` index first.
+  - First ADRs: schema format (JSON vs Avro/Protobuf — see KOS-22), Keycloak vs alternatives, no service-mesh.
 - [ ] KOS-16.7 — Runbooks under `docs/runbooks/` — one per alert.
+  - Land `docs/runbooks/template.md` and `docs/runbooks/README.md` index first.
+  - Pair each runbook to an alert as KOS-14 lands: high-error-rate, kafka-lag, db-pool-exhausted, DLT-depth.
+- [ ] KOS-16.8 — Fix root `README.md`: replace placeholder text on line 9 (`# RUnning project:` typo) and line 14 (`[] to fix the issue with gradle runs`); link to `docs/onboarding.md` once KOS-16.3 lands.
 
 ## KOS-17 — CI/CD Pipeline
-- [x] KOS-17.1 — GitHub Actions workflow: `build`, `test`, `detekt`, `ktlint`, `dependencyUpdates`, JaCoCo coverage gate; test + coverage report artifacts uploaded.
 - [ ] KOS-17.2 — Image build & push per service (uses each service's Dockerfile from its own epic).
 - [ ] KOS-17.3 — Coverage upload to Codecov (or Coveralls).
 - [ ] KOS-17.4 — Gradle build cache action.
@@ -219,19 +266,6 @@ The system is ready for actual users.
 - [ ] KOS-19.3 — Ingress + cert-manager for TLS.
 - [ ] KOS-19.4 — External Secrets Operator integration.
 - [ ] KOS-19.5 — Blue/green or canary release strategy via Argo Rollouts.
-
----
-
-# P7 — Agent / Developer tooling
-Already largely done. Tracked here for completeness.
-
-## KOS-20 — Agent-Agnostic Rules Layout
-- [x] KOS-20.1 — Source-of-truth `.ai/` directory split into `rules/`, `skills/`, `agents/`, `workflows/`, `memory/`.
-- [x] KOS-20.2 — `AGENTS.md` root entry point.
-- [x] KOS-20.3 — `CLAUDE.md` wrapper.
-- [x] KOS-20.4 — `.cursor/rules/main.mdc` wrapper for Cursor.
-- [x] KOS-20.5 — `.github/copilot-instructions.md` wrapper for GitHub Copilot.
-- [x] KOS-20.6 — Pre-commit hook that fails when a wrapper drifts from the canonical rules.
 
 ---
 
