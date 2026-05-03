@@ -36,7 +36,7 @@ Unblocks every other band. Until P0 is done, services cannot start cleanly and t
 
 ## KOS-3 — Local Development Infrastructure
 - [x] KOS-3.1 — `docker-compose.yml` with PostgreSQL, Redis, Kafka (KRaft mode), Elasticsearch, Keycloak.
-- [ ] KOS-3.2 — Per-service `Dockerfile` (multi-stage, JLink runtime image).
+- [!] KOS-3.2 — Per-service `Dockerfile` (multi-stage, JLink runtime image). Blocked — services have no source code yet; Dockerfiles need a compiled jar to package.
 - [~] KOS-3.3 — Postgres init scripts checked in under `infra/postgres-init/`. Keycloak realm export pending KOS-5 design.
 - [x] KOS-3.4 — Kafka topic auto-create via `kafka-init` one-shot container in compose.
 - [x] KOS-3.5 — `Makefile` for common dev tasks (`up`, `down`, `reset`, `logs`, `psql`, `redis-cli`, `kafka-topics`, `build`, `test`).
@@ -45,9 +45,9 @@ Unblocks every other band. Until P0 is done, services cannot start cleanly and t
 Moved into P0 — services land with tests, not retrofitted later.
 
 - [x] KOS-14.1 — Unit-test scaffolding per module: **JUnit 6** (BOM in convention plugin), MockK, Kotest assertions.
-- [x] KOS-14.2 — Integration tests with Testcontainers (Postgres, Kafka, Redis, ES) under `src/integrationTest/kotlin`.
+- [~] KOS-14.2 — Integration tests with Testcontainers (Postgres, Kafka, Redis, ES) under `src/integrationTest/kotlin`. Source set + deps wired; real container tests blocked until services have DB/Kafka logic.
 - [ ] KOS-14.3 — Contract tests between producers/consumers (Spring Cloud Contract or Pact).
-- [x] KOS-14.4 — GitHub Actions: `build`, `test`, `detekt`, `ktlint`, `dependencyUpdates`, image build & push.
+- [~] KOS-14.4 — GitHub Actions: `build`, `test`, `detekt`, `ktlint`, `dependencyUpdates`, image build & push. CI runs check + dependencyUpdates; image build & push step missing — blocked on KOS-3.2 Dockerfiles.
 - [x] KOS-14.5 — Coverage gate (JaCoCo, ≥70% line, ≥60% branch).
 - [ ] KOS-14.6 — End-to-end tests against the full local stack (Docker Compose) — one happy-path + one failure path per business workflow (upload → process → search → feed → notify).
 
