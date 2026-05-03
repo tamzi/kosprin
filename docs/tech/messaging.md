@@ -13,7 +13,7 @@ Async backbone of the system. All cross-service communication that does not need
 | `*.DLT`            | (consumers)            | ops only                                    | Dead-letter for poison messages.          | original key  |
 
 ## Conventions
-- **Serialization**: target Avro/Protobuf with a schema registry (KOS-S2). Until then, JSON with a `schemaVersion` header.
+- **Serialization**: target Avro/Protobuf with a schema registry (KOS-22). Until then, JSON with a `schemaVersion` header.
 - **Headers**: `correlationId`, `eventId`, `source`, `schemaVersion`. Producers must set them; consumers must propagate.
 - **Idempotency**: every event carries an `eventId` (UUID v7). Consumers dedupe on `(eventId, consumerGroup)` for at-least-once safety.
 - **Ordering**: only guaranteed within a partition. Choose partition keys so order matters within the key (e.g. one video's lifecycle events stay in one partition).
