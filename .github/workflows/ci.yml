@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [master, improvements]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate AI setup
+        run: scripts/validateAiSetup.py
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: gradle
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Check (build, test, detekt, ktlint, coverage)
+        run: ./gradlew check
+
+      - name: Dependency updates report
+        run: ./gradlew dependencyUpdates
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: '**/build/reports/tests/'
+          retention-days: 7
+
+      - name: Upload coverage reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-reports
+          path: '**/build/reports/jacoco/'
+          retention-days: 7

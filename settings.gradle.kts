@@ -1,10 +1,23 @@
 rootProject.name = "kosprin"
 
+pluginManagement {
+    includeBuild("buildLogic")
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
 listOf(
     "analytics-service",
     "common",
     "feed-service",
-    "dashboard",
     "gateway",
     "metadata-service",
     "notification-service",

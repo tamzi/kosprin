@@ -8,7 +8,7 @@ const Home = () => (
     <Box>
         <Typography variant="h5" gutterBottom>Dashboard Overview</Typography>
         <Grid container spacing={3}>
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 240 }}>
                     <Typography variant="h6">Recent Activity</Typography>
                     <Box sx={{ mt: 2 }}>
@@ -18,7 +18,7 @@ const Home = () => (
                     </Box>
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 240 }}>
                     <Typography variant="h6">Key Metrics</Typography>
                     <Box sx={{ mt: 2 }}>
@@ -28,7 +28,7 @@ const Home = () => (
                     </Box>
                 </Paper>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={{ xs: 12 }}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                     <Typography variant="h6">Monthly Trends</Typography>
                     <Box sx={{ height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

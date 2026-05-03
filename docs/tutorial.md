@@ -1,7 +1,7 @@
 # tutorial explanations
 **_[ ] move this to an implementation using this template._**
 
-The architecture follows the design in the [architecture diagram](systemdesign.md).
+The architecture follows the design in the [architecture diagram](tech/systemdesign.md).
 
 #### key components and their responsibilities:
 **Client:** 
@@ -13,7 +13,7 @@ The architecture follows the design in the [architecture diagram](systemdesign.m
 - Distributes incoming requests across multiple instances of the API gateway or services. 
 - In cloud environments, this could be an external load balancer. 
 - (For our local setup, Docker/Kubernetes will handle routing, and we won’t implement a separate load balancer service explicitly.)
-- [More on why we are not implementing the load balancer as a springboot service](loadbalancer.md) -> **to add content**.
+- [More on why we are not implementing the load balancer as a springboot service](tech/loadBalancer.md).
  
 
 **API Gateway:** 
